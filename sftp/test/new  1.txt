@@ -1,0 +1,1 @@
+SELECT table13.`id`, redirect3.session, table13.`COL 2`, table13.`COL 3`, table13.`COL 4`, table13.`COL7`,redirect3.timestamp FROM redirect3 INNER JOIN table13 where redirect3.aff_sub = table13.COL7 and redirect3.session='maskedworld.sd@gmail.com' group by table13.`id`

@@ -1,0 +1,51 @@
+.cp-textarea  {
+      .cp-label-blue{
+            color:  #A1CAD5;
+        }
+      .cp-error-msg{
+          position: absolute;
+          pointer-events: none;
+          right: 21px;
+          font-size: 12px;
+          color: red;
+          visibility: hidden;
+         }
+
+        .cp-red{
+          position: absolute;
+            pointer-events: none;
+            right: 21px;
+            font-size: 12px;
+            top: 12px; 
+            color: red;
+            visibility: visible;
+        }
+
+
+.cp-input:focus ~ .cp-floating-label,
+    .cp-input:not(:focus):valid ~ .cp-floating-label{
+        top: 11px;
+        left: 20px;
+        font-size: 11px;
+        font-family: 'SapientSansRegular';
+        opacity: 1;
+        text-transform: uppercase;
+       
+    }
+
+    .cp-input {
+       font-size: 15px;
+        height: 68px;
+        width: 100%;
+        font-weight: bold;
+        box-sizing: border-box;
+        padding-left: 19px;
+        outline: none;
+        border: none;
+        border-color: transparent;
+        padding-top: 33px;
+        resize: none;
+        font-family: 'SapientSansRegular';
+   }
+}
+

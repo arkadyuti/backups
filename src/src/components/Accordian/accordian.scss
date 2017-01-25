@@ -1,0 +1,91 @@
+$white : #fff;
+$red : #de2728;
+$clickedcolor : #1c1c1c;
+.arrow{
+    color:$white;
+    padding:0 0 0 54%;
+    font-size:14px;
+}
+    .visibleBackground{
+	background-color: $clickedcolor;
+	}
+
+   
+    .hover-for-accordian:hover{
+    color: #2daedb;
+    }   
+
+.toggle-list{
+    padding-left:12px;
+}
+.list-title{
+	color: $white;
+    font-size: 16px;
+    font-family: 'SapientSansMedium';
+    text-decoration: none;
+    padding:0 0 0 15px;
+
+
+}
+
+.list-title{
+		&hover{
+			color: $white;
+		}
+}
+
+.list-title{
+		&visited{
+			color: $white;
+		}
+}
+
+a:hover{
+	color:$white;
+	text-decoration:none;
+}
+
+.toggle-list-item{
+	color:$white;
+	padding: 10px 0 0 15px;
+	font-size:16px;
+	font-family:'SapientSansMedium';
+
+}
+
+.toggle-items{
+    width: 99%;
+   padding: 20px 0px 20px 7px;
+}
+
+.colorChange{
+	color:$white;
+}
+.icon{
+	padding-left:12px;
+	color: $white;
+    font-size: 16px;
+}
+.toggle-items-ul{
+	 width: 108%;
+    padding: 0px 2px 0px 10px;
+    margin-left: -15px;
+}
+.sidepanel-list {
+padding : 20px 0 20px 0;    
+}
+.hide-outline{
+                outline:0;
+}
+.hide-outline-close{
+                outline:0;
+}
+
+
+
+@media (max-width:992px){
+	.toggle-items{
+		width:99%;
+	}
+
+}

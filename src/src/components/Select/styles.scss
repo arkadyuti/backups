@@ -1,0 +1,126 @@
+/* COLORS */
+$white: #fff;
+$shevron_grey: #DCDCDC;
+$shevron_border: #ccd0d1;
+$color_select_li: #BBDAE2;
+
+*{
+  margin:0;
+  padding:0;
+}
+
+.cp-selectbox{
+	.cp-options{
+	    font-family: 'SapientSansRegular';
+    font-weight: bold;
+		ul{
+		    background: #fff none repeat scroll 0 0;
+		    display: none;
+		    z-index: 2;
+		    height: 150px;
+		    overflow: auto;
+		    list-style: none;
+		    position: absolute;
+		    right: 1px;
+		    top: 68px;
+		    width: 100%;
+		    border: 1px solid #d7d7d7;
+		li {
+			padding: 15px;
+			display: block;
+			text-decoration: none;
+			word-wrap: break-word;
+
+				&:hover {
+					background: $color_select_li;
+					color: $white;
+					transition: 0.2s ease;
+					}
+				&:focus {
+					background: $color_select_li;
+					color: $white;
+					transition: 0.2s ease;
+					outline: none;
+					}
+		}
+	}
+	.cp-visible {
+		display: block;
+		}
+	}
+	
+	.cp-selected  {
+	
+		display: block;
+		height: 70px;
+		text-decoration: none;
+		cursor: pointer;
+		box-sizing: border-box;
+		
+
+
+		.cp-selected-li-text{
+	            position: absolute;
+				top: 38px;
+				left: 19px;
+				font-size: 14px;
+                font-weight: bold;
+				font-family:'SapientSansRegular';
+		}
+	  	
+	  	.cp-floating-label{
+		 	position: absolute;
+			top: 12px;
+	    	left: 20px;
+	    	font-size: 11px;
+	    	font-family: 'SapientSansRegular';
+	    	opacity: 1;
+	    	color: grey;
+		}
+
+
+		.cp-label-blue{
+			color:  #A1CAD5;
+		}
+		.cp-custom-shevron{
+				height: 100%;
+				width: 32px;
+				position: absolute;
+				right: 0px;
+				outline: none; 	
+				border-left: 1px solid $shevron_border;
+				
+				&:focus + .cp-floating-label{
+					color: #A1CAD5;
+				}
+				.cp-custom-shevron-icon{
+			    position: absolute;
+				top: 25px;
+				left: 10px;
+				}
+		}
+
+		.cp-shevron-grey{
+			    background-color: $shevron_grey;
+		}
+
+	}
+
+	
+	
+
+	::-webkit-scrollbar {
+			background-color: $shevron_grey;
+			width: 2px;
+	}
+
+	::-webkit-scrollbar-thumb {
+			background-color: black;
+	}
+
+}
+
+li:not(:focus) .cp-visible{
+ 	display: none;
+
+ }

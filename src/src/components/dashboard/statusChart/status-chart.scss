@@ -1,0 +1,110 @@
+.status-chart-svg {
+  text-align: center;
+}
+
+path:hover {
+	opacity: 0.4;
+  cursor:pointer;
+}
+
+.hover-active {
+  font-weight: bold;
+  opacity:1;
+}
+
+.status-svg-container {
+
+ /*  float: left; */
+/*   width: 33%; */
+  margin-top: 3%;
+  ul {
+    float:right;
+  list-style: none;
+  padding: 0px;
+    margin: 0px 0px 0px 4%;
+    .hover-not-active {
+    color:grey;
+    opacity:0.5;
+  }
+}
+      .status-chart-legend-color {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    li span:nth-child(2)::after {
+        display:block;
+        content:" ";
+    }
+  }
+
+@media (min-width: 992px) {
+  .status-svg-container:nth-last-child(1):nth-child(3n+4) {
+  margin-left: 33%;
+} /* to keep the last child, if odd, in the center of the div
+    I.E. 4,7,10,...  */
+
+  /* .status-svg-container:nth-last-child(1):nth-child(3n+5) {
+    margin-left: auto;
+  } */ /* if 2 charts on last-line, then the last one shud come closer
+  to second last */
+
+  /* .status-svg-container:nth-last-child(2):nth-child(3n+4) {
+    margin-left: 18%;
+  }  *//* if two charts on last line , aligning it correctly */
+  .status-svg-container:nth-child(3n+4){
+    clear: left;
+  }
+   .status-svg-container:nth-last-child(2):nth-child(3n+4){
+    margin-left: 17%;
+  }
+  .status-svg-container {
+    ul {
+      li {
+        text-align: left;
+      }
+    }
+  }
+} /* last two properties target if two elements on last line */
+
+@media (max-width: 992px) and (min-width: 768px) {
+ /*  .status-svg-container {
+    width: 50%;
+    margin: 0 auto;
+  } */
+  .status-svg-container:nth-child(2n+3) {
+    clear: left;
+  }
+  .status-svg-container {
+  ul {
+    float: none;
+  } /* removing float so that li items fall below svg */
+}
+  .status-svg-container:nth-last-child(1):nth-child(odd) {
+    margin-left: 26%;
+  }
+}
+
+@media (max-width: 768px){
+  .status-svg-container {
+    width: 100%;
+/*     margin: 0 auto; */
+   /* single chart on each line for mobile */
+  ul {
+    float: none;
+  }
+}
+}
+
+@media (min-width: 992px) and (max-width:1189px) {
+  .status-svg-container {
+    ul {
+      float: none;
+    }
+      li{
+        text-align:center !important;
+      }
+  }
+}

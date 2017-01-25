@@ -1,0 +1,15 @@
+{
+  "name": "e2e-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arkadyuti",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^3.2.0",
+    "selenium-webdriver": "^3.0.1"
+  }
+}

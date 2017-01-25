@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Darkenstone';
+  src: url('Darkenstone.eot');
+  src: url('Darkenstone.woff2') format('woff2'),
+       url('Darkenstone.woff') format('woff'),
+       url('Darkenstone.ttf') format('truetype'),
+       url('Darkenstone.svg#Darkenstone') format('svg'),
+       url('Darkenstone.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,0 +1,192 @@
+ 
+ .create-project{
+    background-color: #DFE5E6;
+ }
+ .cp-tab-container{
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    [class^="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.cp-tab-container{
+    box-sizing: border-box;
+    position: relative;
+    min-height: 650px;
+    padding: 0px 15px 0px 15px;
+
+        .cp-tab-list{
+                margin-bottom: 0px;
+
+
+            .cp-tab-item{
+                       display: inline-block;
+                       padding: 15px 25px 20px 0px;
+                       position: relative;
+                       cursor: pointer; 
+                       font-size: 12px;
+                       color: #a5a7a7;
+                       font-weight: bold;
+                       letter-spacing: 0.5px;
+                       font-family: 'SapientSansRegular';
+                
+            }
+
+               .cp-basic-information {
+                        color: black;
+                    }
+
+                    .cp-basic-information:after {
+                             content: "";
+    width: 37px;
+    position: absolute;
+    border-bottom: 3px solid #dc292f;
+    bottom: 0px;
+    left: 35px;
+                    }
+
+
+                     .cp-tech-stack {
+                        color: black;
+                    }
+
+                    .cp-tech-stack:after {
+                             content: "";
+    width: 37px;
+    position: absolute;
+    border-bottom: 3px solid #dc292f;
+    bottom: 0px;
+    left: auto;
+    right: 35px;
+                    }
+
+
+
+            .cp-active{
+                color: black;
+                   /*  padding-left: 0px */;
+            }
+          
+            
+            .cp-active:after {
+                   content: "";
+    width: 37px;
+    position: absolute;
+    border-bottom: 3px solid #dc292f;
+    bottom: 0px;
+    left: 0;
+
+
+            }
+        }
+        .cp-tab-content {
+                background-color: white;
+                padding: 4% 4% 5% 4%;
+                width: 100%; 
+                position: relative; 
+
+            .cp-show{
+                position: relative;
+                display:block;
+                margin: 0;
+                width: 100%;
+            } 
+
+            .cp-hide{
+                display:none;
+            }
+            
+        }
+    }
+
+    .cp-tab-error{
+        
+        position: absolute;
+        display: inline-block;
+        border: 1px solid #edd1d6;
+        border-radius: 5px;
+        background-color: #f2dede;
+        color: #a94442;
+        padding: 4px 25px;
+
+    }
+
+    .cp-form-footer {
+        position: relative;
+        margin-top: 40px ;
+
+.cp-disabled-button{
+    background-color: grey;
+    cursor:default;
+}
+    }
+
+    .cp-page-heading {
+        font-family: 'SapientSansRegular';
+        font-weight: bold;
+            margin-top: 4px;
+    display: inline-block;
+    }
+    .cp-tab-nav{
+        margin-top: 12px;
+    }
+
+
+@media (max-width: 767px) {
+    .cp-tab-container{
+            min-width: 100%;
+            margin: auto;
+            .cp-tab-list{
+
+              .cp-active:after {
+                   content: "";
+    width: 37px;
+    position: absolute;
+    border-bottom: 3px solid #dc292f;
+    bottom: 0px;
+    left: 10px;
+
+
+            }
+             .cp-tech-stack:after {
+                             content: "";
+    width: 37px;
+    position: absolute;
+    border-bottom: 3px solid #dc292f;
+    bottom: 0px;
+    left: auto;
+    right: 20px;
+                    }
+
+        }
+
+            .cp-tab-error {
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                right: 0px;
+                left: 0;
+                padding: 10px 12px 10px 12px;
+                margin: 0 auto;
+                padding: 8px;
+            }
+            .cp-form-footer {
+                margin-top: 16px;
+            }
+        
+            .cp-tab-list{
+                 .cp-tab-item{
+                    font-size: 10px;
+                    padding: 15px 2% 20px 2%;
+                 }
+            }
+    }
+
+  
+
+
+}

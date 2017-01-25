@@ -1,0 +1,99 @@
+{
+	"trends": {
+		"2015": {
+			"least_year": 2014,
+			"total": 69,
+			"current": 2015,
+			"yearData": {
+				"Q1": {
+					"RED": 100,
+					"GREEN": 200,
+					"AT RISK": 300
+				},
+				"Q2": {
+					"RED": 1200,
+					"GREEN": 651,
+					"AT RISK": 1051
+				},
+				"Q3": {
+					"RED": 1111,
+					"GREEN": 500,
+					"AT RISK": 300
+				},
+				"Q4": {
+					"RED": 300,
+					"GREEN": 666,
+					"AT RISK": 1000
+				}
+			}
+		},
+		"2016": {
+			"least_year": 2015,
+			"total": 69,
+			"current": 2016,
+			"yearData": {
+				"Q1": {
+					"RED": 1110,
+					"GREEN": 850,
+					"AT RISK": 200
+				},
+				"Q2": {
+					"RED": 200,
+					"GREEN": 400,
+					"AT RISK": 900
+				},
+				"Q3": {
+					"RED": 300,
+					"GREEN": 1200,
+					"AT RISK": 490
+				},
+				"Q4": {
+					"RED": 100,
+					"GREEN": 600,
+					"AT RISK": 1111
+				}
+			}
+		}
+	},
+	"skills": [{
+		"label": "framework1",
+		"value": "20"
+	}, {
+		"label": "framework2",
+		"value": "15"
+	}, {
+		"label": "framework3",
+		"value": "10"
+	}, {
+		"label": "framework4",
+		"value": "9"
+	}, {
+		"label": "framework5",
+		"value": "7"
+	}, {
+		"label": "framework6",
+		"value": "12"
+	}, {
+		"label": "framework7",
+		"value": "5"
+	}, {
+		"label": "framework8",
+		"value": "5"
+	}, {
+		"label": "framework9",
+		"value": "4"
+	}, {
+		"label": "framework10",
+		"value": "4"
+	}, {
+		"label": "framework11",
+		"value": "2"
+	}],
+	"tweets": [{
+		"text": "OMG my first tweet!",
+		"id": "5783d9c3917a640100f1890e"
+	}, {
+		"text": "My life is the best...no the worst...OMG",
+		"id": "5783d9ed917a640100f1890f"
+	}]
+}

@@ -1,0 +1,143 @@
+$white: #fff;
+$black: #2a2a2a;
+$red: #de2728;
+$grey: #c0c0c0;
+$list-border:#3a3a3a;
+$list-hover:#2daedb ;
+.navigation-container {
+    background: $black;
+    width: 240px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+a:focus, a:hover {
+    color: $list-hover;
+    text-decoration: none;
+}
+.sidepanel-flex{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.list-container {
+    width: 99%;
+    min-height: 265px;
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+}
+.not-allowed{
+    cursor:not-allowed;
+}
+
+li {
+    list-style: none;
+}
+
+.list-items {
+    color: $white;
+    font-size: 16px;
+    padding: 0px 0px 0 15px;
+    font-family: 'SapientSansMedium';
+
+    
+}
+
+.list-items:hover {
+    text-decoration: none;
+}
+
+.list-items:visited {
+    text-decoration: none;
+}
+
+.aside {
+    margin-left: 250px;
+}
+
+.list {
+    padding: 0 0 20px 0;
+    list-style-type: none;
+}
+
+.logo {
+    background-color: $red;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    padding: 10px 42%;
+}
+
+.toggle-list {
+    padding-left: 12px;
+}
+
+.mobile-user {
+    color: white;
+    display: none;
+}
+
+.logout-display {
+    padding: 10px 0;
+    display: none;
+    .signout-icon {
+        display: none;
+    }
+}
+
+ul .list-items:hover {
+    text-decoration: none;
+}
+
+.mobile-user {
+    display: none;
+}
+
+.sidepanel-list {
+    padding: 20px 0 20px 0px;
+    
+}
+
+.applyColor{
+  color:$list-hover;  
+}
+
+.addHover:hover{
+    color: $list-hover;
+}  
+.colorChange{
+    color:$white;
+} 
+
+
+
+
+@media (max-width:992px) {
+    
+    .logout-display {
+        display: block;
+    }
+    .imgtxt-component {
+        text-align: left !important;
+        width:220px;
+    }
+    .ion-android-close {
+        color: #000;
+        font-size: 26px;
+        cursor: pointer;
+        position: absolute;
+        left:240px;
+        top: 4px;
+        background: $white;
+        padding: 0 11px;
+    }
+    .list-container {
+        border-bottom: 1px solid $list-border;
+        height:303px;
+        
+        overflow-x:hidden;
+        flex:1;
+    }
+
+}

@@ -1,0 +1,3 @@
+
+<h2>Key Features</h2><br>
+Our tech experts will assist you with the basic functionality and usability of Windows 7 to make your task easier. Apart from that, we will troubleshoot all issues pertaining to software and hardware on your PC. We will check if any application on your PC is not creating any compatibility issue with Windows 7. Not only limited to this, our tech expert will check your system for malicious threats, corrupted registries, etc that can considerably slow down your PC. 

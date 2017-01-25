@@ -1,0 +1,7 @@
+
+RewriteEngine on
+ErrorDocument 404 /index.php
+RewriteCond %{HTTP_HOST} ^m\.cropmybill\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.m\.cropmybill\.com$
+RewriteRule ^/?$ "http\:\/\/cropmybill\.com\/" [R=301,L]
+

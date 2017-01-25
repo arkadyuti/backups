@@ -1,0 +1,49 @@
+$icomoon-font-path: "../fonts";
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icomoon-font-path}/icomoon.eot');
+  src:  url('#{$icomoon-font-path}/icomoon.eot') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SapientSansRegular';
+    src: url('../fonts/SapientSansRegular.eot'),
+    url('../fonts/SapientSansRegular.woff') format('woff'), 
+    url('../fonts/SapientSansRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SapientSansLight';
+    src: url('../fonts/SapientSansLight.eot'),
+    url('../fonts/SapientSansLight.woff') format('woff'), 
+    url('../fonts/SapientSansLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SapientSansMedium';
+    src: url('../fonts/SapientSansMedium.eot'),
+    url('../fonts/SapientSansMedium.woff') format('woff'), 
+    url('../fonts/SapientSansMedium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SapientSansBlack';
+    src: url('../fonts/SapientSansBlack.eot'),
+    url('../fonts/SapientSansBlack.woff') format('woff'), 
+    url('../fonts/SapientSansBlack.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SapientSansBold';
+    src: url('../fonts/SapientSansBold.eot'),
+    url('../fonts/SapientSansBold.woff') format('woff'), 
+    url('../fonts/SapientSansBold.ttf') format('truetype');
+}

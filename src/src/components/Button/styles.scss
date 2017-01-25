@@ -1,0 +1,33 @@
+.cp-button{
+	    background-color: #2DAEDB;
+        border-color: transparent;
+        width: 105px;
+        padding: 5px;
+        color: white;
+        font-size:14px;
+        font-family:'SapientSansRegular';
+        border-radius: 2px;
+       margin-left:76px;
+        float: right;
+
+}
+
+.cp-button:focus{
+ border:2px solid #fff;
+}
+
+
+@media (max-width: 767px) {
+    
+    .cp-button {
+            width: 100%;
+            padding: 12px 0;
+            margin-top:50px;
+
+    }
+    .cp-submit-btn{
+      
+       width:100%;
+
+    }
+}

@@ -1,0 +1,32 @@
+/* @font-face {
+  font-family: 'SapientSansBold';
+  
+  src: url('../../../../fonts/SapientSansBold.eot') format('embedded-opentype'),
+       url('../../../../fonts/SapientSansBold.ttf') format('ttf'),
+       url('../../../../fonts/SapientSansBold.woff') format('woff');
+       
+  font-weight: normal;
+  font-style: normal;
+} */
+
+#wrapper{
+  max-width: 620px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.svg-container {
+  width: 100%;
+}
+
+text {
+  font-family: 'sans-serif';
+}
+
+
+
+
+@media (max-width:490px ) {
+text {
+  }
+ }

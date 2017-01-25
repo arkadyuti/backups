@@ -1,0 +1,34 @@
+$black:#000;
+$red:#fa3e3e;
+.button {
+    position: relative;
+    padding: 14px 100px 0 0;
+    display: inline-block;
+    vertical-align: top;
+    .notification-badge {
+        font-size: 16px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $black;
+        border-image: initial;
+        border-radius: 50%;
+        padding: 5px 9px;
+    }
+    .button-badge {
+        background-color: $red;
+        border-radius: 40%;
+        color: white;
+        padding: 0px 5px;
+        font-family: 'SapientSansLight';
+        font-size: 10px;
+        position: absolute;
+        top: 9px;
+        left: 20px;
+    }
+}
+
+@media (max-width:992px) {
+    .notification-badge {
+        display: none;
+    }
+}

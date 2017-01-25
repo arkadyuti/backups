@@ -1,0 +1,15 @@
+.per-page-dropdown{
+	float:right;
+	.per-page-list{
+		width: 120px;
+		border-radius:5px;
+		border:none;
+		padding: 3px 0px;
+	}
+}
+
+@media (max-width: 768px) {
+	.per-page-dropdown{
+		display:none;
+	}
+}

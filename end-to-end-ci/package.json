@@ -1,0 +1,15 @@
+{
+  "name": "end-to-end-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arkadyuti",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^2.26.1",
+    "selenium-webdriver": "^3.0.1"
+  }
+}

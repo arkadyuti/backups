@@ -1,0 +1,607 @@
+<?php 
+session_start();
+require_once( 'autoload.php' );
+
+$client_id = '804877435392-iaglqddvpqvm268ag48no56ovb5ha0do.apps.googleusercontent.com';
+$client_secret = 'qIJN80ryuToDDrmMuZXOEe2B';
+$redirect_uri = 'http://cropmybill.com/index3.php'; 
+$simple_api_key = 'AIzaSyDnFy3CCQW0bsOmBsIIgXTt_CbMDJLRPiE';
+
+$client = new Google_Client();
+$client->setClientId($client_id);
+$client->setClientSecret($client_secret);
+$client->setRedirectUri($redirect_uri);
+$client->setDeveloperKey($simple_api_key);
+$client->addScope("https://www.googleapis.com/auth/userinfo.email","https://www.googleapis.com/auth/plus.login");
+
+
+$plus 			 = new Google_Service_Plus($client);
+$objOAuthService = new Google_Service_Oauth2($client);
+
+if (isset($_REQUEST['logout'])) {
+  unset($_SESSION['access_token']); 
+}
+ 
+if (isset($_GET['code'])) {
+  $client->authenticate($_GET['code']);
+  $_SESSION['access_token'] = $client->getAccessToken();
+  $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+}
+
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+  $client->setAccessToken($_SESSION['access_token']);
+} else {
+  $authUrl = $client->createAuthUrl();
+}
+if ($client->getAccessToken()) {
+$userData = $objOAuthService->userinfo->get();
+$data['userData'] = $userData;
+$_SESSION['access_token'] = $client->getAccessToken();
+} else {
+$authUrl = $client->createAuthUrl();
+$data['authUrl'] = $authUrl;
+}
+?>
+
+<html>
+ 
+<head> 
+
+    <!-- Latest compiled and minified CSS -->
+    
+    <link rel="stylesheet" href="./css/lib.css">
+	<link rel="stylesheet" type="text/css" href="./css/cropmybill.css" />
+	
+	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
+	<link rel="shortcut icon" href="http://cropmybill.com/img/crop.ico">
+	<script src="js/jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#contact-us-hide").click(function(){
+        $("#contact-us-hide").hide();
+		$("#contact-us-email").slideToggle(1500,"easeOutBounce");
+		$("#contact-us-show").show();
+    });
+   
+});
+/*
+$(document).ready(function(){
+	$("#contact-us-show").click(function(){
+		$("#contact-us-show").hide();
+		$("#contact-us-email").slideToggle(1500,"easeOutBounce");
+		$("#contact-us-hide").show();
+	});
+});*/
+</script>
+ 
+		<style>
+		.ui-helper-center1{
+    text-align: center;
+	color:white;
+}
+.ui-helper-center2{
+    text-align: center;
+	color:red;
+	display:none;
+}
+		</style>
+	
+ <script type="text/javascript">
+(function(f,b){if(!b.__SV){var a,e,i,g;window.cropmybill=b;b._i=[];
+b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="cropmybill";c.people=c.people||[];c.toString=function(b){var a="cropmybill";"cropmybill"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;
+e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.cropmybill||[]);
+</script>
+<script>
+function scrollWin() {
+    window.scrollTo(0,600);
+}
+</script>
+
+    <title>Best CashBack and Best Deals/Coupons at CropmyBill</title>
+</head>
+<body>
+
+
+<div class="mobile floater preorder-button" id="footer-pre-order">
+
+<a href="#" onClick="mixpanel.track('Clicked Pre-Order', {location: 'Mobile Footer Link'});">Login</a>
+</div>
+
+
+
+<!-- GLOBAL NAVIGATION -->
+<nav class="global-nav">
+    <h1 class="logo"><a href="#">Project</a></h1>
+    <ul>
+<?php
+$_SESSION['a']='';
+if ( (!isset($_SESSION['signin_email'])) && (!$_SESSION['access_token']))   {
+	echo '
+		
+        <li style="font-size:1.0rem;" class="preorder-button"><div class="main-nav"><a>Join Us</a></div></li> 
+	
+	</ul>';
+		
+}
+else {
+	$G_DNAME='a';
+	if(isset($_SESSION['access_token']))
+	{
+		$me			= $plus->people->get('me');
+		$displayName= $me['displayName'];
+		$G_IMG_URL	= $me['image']['url'];
+		$given_name	= $userData->given_name;
+		$ID			= $userData->id;
+		$gender		= $userData->gender;
+		$email		= $userData->email;
+		
+		$client  		= @$_SERVER['HTTP_CLIENT_IP'];
+		$forward 		= @$_SERVER['HTTP_X_FORWARDED_FOR'];
+		$remote  		= $_SERVER['REMOTE_ADDR'];
+		$browser		= $_SERVER['HTTP_USER_AGENT'];
+		date_default_timezone_set("Asia/Kolkata");
+		$datestamp		= date('Y-m-d H:i:s');
+		
+		$conn_google	= mysql_connect("localhost","arka_cropmybill","9735525775") or die ("connection error");
+		mysql_select_db("arka_cropmybill", $conn_google) or die ("database not selected");
+		mysql_query("INSERT INTO login(signup_email,signup_name,fname_google,name_google,ID_google,icon_google,gender_google,client,forward,remote,browser,datestamp)
+			       VALUES('$email','$displayName','$given_name','$displayName','$ID','$G_IMG_URL','$gender','$client','$forward','$remote','$browser','$datestamp')");
+		mysql_close($conn_google);
+	}
+	elseif(isset($_SESSION['signin_email']))
+	{
+		$email=$_SESSION['signin_email'];
+		
+		$conn_user	= mysql_connect("localhost","arka_cropmybill","9735525775") or die ("connection error");
+		mysql_select_db("arka_cropmybill", $conn_user) or die ("database not selected");
+		$q = "SELECT signup_name FROM login WHERE signup_email = '$email'";
+		$re = mysql_query($q) or die ("no email");
+		$qre = mysql_fetch_array($re, MYSQL_ASSOC) or die("query");
+		//$temp = explode(" ",$qre['signup_name']);
+		$given_name = $qre['signup_name'];
+	}
+   
+		
+//echo $G_DNAME; 
+
+  echo '
+	<div style="position:relative;float:right;transition:background .2s ease;border:solid 1px #00baf2;border-radius:4px;display:block;cursor:pointer;width:160px;background-color:#476C91;">
+	<table id="table-top" width="100%" style="border: 1px solid #00baf2;border-collapse: collapse;padding: 6px;">
+		<tr><td class="ui-helper-center1" style="font-size:1.4rem;border: 1px solid #00baf2;border-collapse: collapse;padding: 6px;">Hi,'.$given_name.'</td></tr>
+		<tr><td class="ui-helper-center2" style="border: 1px solid #00baf2;border-collapse: collapse;padding: 6px;"><a style="color:white;">Pending (Rs.1000)</a></td></tr>
+		<tr><td class="ui-helper-center2" style="border: 1px solid #00baf2;border-collapse: collapse;padding: 6px;"><a style="color:white;">Redeem (Rs.1000) </a></td></tr>
+		<tr><td class="ui-helper-center2" style="border: 1px solid #00baf2;border-collapse: collapse;padding: 6px;"><a href="http://cropmybill.com/logout.php" style="color:white;">Logout </a></td></tr>
+	</table>
+	</div>
+    </ul>
+';
+}
+?> 
+
+    
+	
+	<script> 
+$(document).ready(function(){
+    $("#table-top").hover(function(){
+        $(".ui-helper-center2").slideToggle("show"); 
+    });
+});
+</script>
+    <div id="handler" class="mobile handler closed">
+        <i class="fa fa-2x fa-navicon white"></i>
+    </div>
+</nav>
+
+
+<div id="container" style="width:100%;">
+
+<!-- VIDEO SECTION -->
+<aside class="video modalBorder" id="video-view"><!-- Video modal -->
+    <div class="exit" id="exit">
+        <div class="exitHolder">
+            <img class="close-x" src="" />
+        </div>
+    </div>
+    <div id="video-content"></div>
+    <div class="share">
+        <a href="#"><i class="fa fa-twitter fa-2x dark twitter-share"></i></a>
+        <a href="#"><i class="fa fa-facebook fa-2x dark facebook-share"></i></a>
+        <a href="#"><i class="fa fa-envelope-o fa-2x dark email-share"></i></a>
+    </div>
+</aside>
+
+<div class="video vidModal">
+</div>
+
+<!-- HERO SECTION -->
+<section id="hero" class="hero">
+    <header class="heroText">
+       
+	   
+    </header>
+    <div id="hero-slider" class="backslider">
+        <ul class="bs-slides">
+            <li class="slider-img slide1"></li>
+        </ul>
+    </div>
+</section>
+<!--micro time-->
+<?php
+$session='user1';
+$t = microtime(true);
+$micro = sprintf("%06d",($t - floor($t)) * 1000000);
+$d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
+$mTime = $d->format("YmdHisu");
+?>
+
+
+<!-- FEATURES SECTION -->
+    <section class="features">
+        <h3></h3>   
+        <ul><!-- top row -->
+            <li>
+                <a class="circle" id="img-1" href="crop.php?ts=<?php echo $mTime;?>&&ses=<?php echo $session;?>&&url=http://dl.flipkart.com/dl/?affid=cropmybil" target="_blank">
+                    <h4 class="white"></h4>
+                    <div class="copy"> 
+                        <p>Crop It</p>
+                    </div>
+                </a>
+            </li> 
+            <li>
+                <a class="circle" id="img-2" href="crop.php?ts=<?php echo $mTime;?>&&ses=<?php echo $session;?>&&url=http://www.myntra.com/" target="_blank">
+                    <h4 class="white"></h4>
+                    <div class="copy">
+                        <p>Crop It</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="circle-2" id="img-3" href="crop.php?ts=<?php echo $mTime;?>&&ses=<?php echo $session;?>&&url=http://www.amazon.in/" target="_blank">
+                    <h4 class="white"></h4>
+                    <div class="copy">
+                        <p>Crop It</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="circle" id="img-4" href="crop.php?ts=<?php echo $mTime;?>&&ses=<?php echo $session;?>&&url=http://www.jabong.com/" target="_blank"> 
+                    <h4 class="gray"></h4>
+                    <div class="copy">
+                        <p>Crop It</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="circle-2" id="img-5" href="crop.php?ts=<?php echo $mTime;?>&&ses=<?php echo $session;?>&&url=http://www.snapdeal.com/" target="_blank">
+                    <h4 class="gray"></h4>
+                    <div class="copy">
+                        <p>Crop It</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="circle" id="img-6" href="crop.php?ts=<?php echo $mTime;?>&&ses=<?php echo $session;?>&&url=http://www.ebay.in/" target="_blank">
+                    <h4 class="gray"></h4>  
+                    <div class="copy">
+                        <p class="gray">Crop It</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+		<label id="email_error" style="padding:0px 20px 0px 0px;float:right;"></label>
+			<label id="text_error" style="padding:0px 20px 0px 0px;float:right;"></label>
+		<div id="complete" style="padding-right:5px;float:right;"></div>
+	<div id="contact-us-email" style="padding-right:5px;display:none;" align="right">
+		<form  id="footer-contact-us" method="POST" class="cd-form" class="cd-form" style="width:200px; padding:0px;">		
+			
+			
+			<input style="padding:6px 0px 6px 6px;" class="full-width has-border" id="footer_email" name="footer_email" type="email" value="<?php echo $_SESSION['signin_email']; ?>" placeholder="E-mail"><br>
+			<textarea style="padding:6px 0px 6px 6px;" class="full-width has-border" id="footer_text" name="footer_text" type="text" placeholder="Your Comments"></textarea><br>
+			<input style="padding:6px 0px 6px 6px;" class="full-width has-border" id="footer_submit" name="footer_submit" value="submit" type="button" placeholder="Submit">
+		</form>
+			<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#footer_submit').click(function()
+				{
+					if($('#footer_email').val()=="")
+					{
+						$('#email_error').html("Enter Email!").fadeOut( 2000 );
+						$('#email_error').css('color','red');
+						return false;
+					} 
+					else
+					{
+						var footer_email = $('#footer_email').val();
+					}
+					if($('#footer_text').val()=="")
+					{
+						$('#text_error').html("Please Give Comments!").fadeOut( 2000 );
+						$('#text_error').css('color','red');
+						return false;
+					}
+					else
+					{
+						var footer_text = $('#footer_text').val();
+					}
+					jQuery.post("code.php", {footer_email:footer_email,footer_text: footer_text},
+					function(data, textStatus)
+					{
+						if(data == 1)
+						{
+							$('#complete').html("Thanks For Sharing!!").fadeOut( 5000 );
+							$('#complete').css('color','green');
+							$('#contact-us-email').hide();
+							$('#contact-us-hide').show();
+						}
+						else
+						{
+							$('#complete').html("Network Error");
+							$('#complete').css('color','red');
+						}
+					});
+				});
+			});
+			</script>
+
+	</div>
+    </section>
+
+  
+<div id="footer">
+	<div style="text-align:center;" >
+	<table>
+	<tr>
+		<td style="cursor:pointer; color:white;"><a onclick="scrollWin()">&nbsp &nbsp HOME</a></td>
+		<td><a style="color:white;">&nbsp &nbsp &nbsp ABOUT US</a></td>
+		<td><a style="color:white;">&nbsp &nbsp &nbsp FAQs</a></td>
+		<td><a style="color:white; padding-left:290px ">CONNECT WITH US </a></td>
+		<td id="contact-us-hide"><a style="color:white; padding-left:390px;cursor:pointer;">CONTACT US</a></td>
+		<!--<td id="contact-us-show" style="display:none;"><a style="color:white; padding-left:443px;cursor:pointer;">Share</a></td>-->
+		
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td  style="color:white;padding-left:530px;" href="#"><a>&nbsp &nbsp &nbsp <a href="http://facebook.com/cropmybill/" target="_blank"><img width="20px" height="20px" src="img/footer_fb.png"/></a></a></td>
+		<td><a style="color:white;">&nbsp &nbsp &nbsp <img width="20px" height="20px" src="img/footer_g+.png"/></a></td>
+		<td><a style="color:white;">&nbsp &nbsp &nbsp <img width="20px" height="20px" src="img/footer_twitter.png"/></a></td>
+	</tr>
+	</table>
+	</div>
+
+</div>
+
+
+
+
+</div>
+
+<!--popup-->
+<div style="color:#505260;font-family: 'PT Sans', sans-serif;" class="cd-user-modal"> 
+<!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+			<ul style="font-size: 100%;font: inherit;border: 0;padding: 0;margin: 0;list-style: none;" class="cd-switcher">
+				<li style="font-size: 100%;font: inherit;border: 0;padding: 0;margin: 0;" ><a style="color: #2f889a;text-decoration: none;"  href="#0">Sign in</a></li>
+				<li style="font-size: 100%;font: inherit;border: 0;padding: 0;margin: 0;" ><a style="color: #2f889a;text-decoration: none;" href="#0">Sign Up</a></li>
+				
+			</ul>
+
+			<div id="cd-login"> <!-- log in form -->
+				<form class="cd-form" method="POST">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" id="signin_email" name="signin_email" style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding has-border" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding has-border" id="signin_password" name="signin_password" type="password"  placeholder="Password">
+						<a style="color: #2f889a;text-decoration: none;" href="#0" class="hide-password">Show</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" type="checkbox" id="remember_me" checked>
+						<label for="remember-me">Remember me</label>
+						<br>
+						<label for="remember-me" id="pass_not_match" style="display:none;">Invalid Password</label>
+						<label for="remember-me" id="email_not_found" style="display:none;">Invalid Email	</label>
+						
+						
+					</p>
+
+					<p class="fieldset">
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" id="signin_submit" name="signin_submit" class="full-width has-padding" type="button" value="Login">
+					</p>
+					<p align="center" class="fieldset">
+						<img width="150px" height="45px" src="fb.png"/>	
+					
+						<a href="<?php echo $authUrl; ?>"><img width="150px" height="45px" src="g+.png"/></a>
+					</p>
+
+				</form>
+				<script type="text/javascript">
+					$(document).ready(function()
+					{
+						$('#signin_submit').click(function()
+						{
+							
+								var signin_email = $('#signin_email').val();
+								
+								
+							
+								var signin_password = $('#signin_password').val();
+								
+							
+							jQuery.post("code.php", {signin_email:signin_email,signin_password: signin_password},
+							function(data, textStatus)
+							{
+								if(data == 1)
+								{
+									window.location="./index3.php";
+									//alert("correct");
+									//$('#complete').html("Thanks For Sharing!!").fadeOut( 5000 );
+									//$('#complete').css('color','green');
+								}
+								
+								else if(data==3)
+								{
+									$('#email_not_found').show().fadeOut( 5000 );;
+									
+									
+								}
+								else if(data==2)
+								{
+									$('#pass_not_match').show().fadeOut( 5000 );;
+									
+									
+								}
+								else
+								{
+									alert("error");
+									$('#complete').html("Network Error");
+									$('#complete').css('color','red');
+									
+								}
+							});
+						});
+					});
+					</script>
+					
+				
+				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+				<!-- <a style="color: #2f889a;text-decoration: none;" href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
+			
+
+			<div id="cd-signup"> <!-- sign up form -->
+				<form class="cd-form" method="POST">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-name">Name</label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding has-border" id="signup_name" name="signup_name" type="text" placeholder="Name">
+						<span class="cd-error-message">Please Provide Name!</span>
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-phone" for="signup-phone">Phone</label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding has-border" id="signup_phone" name="signup_phone" type="text" placeholder="Phone">
+						<span class="cd-error-message">Please Provide Phone!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding has-border" id="signup_email" name="signup_email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding has-border" id="signup_password" name="signup_password" type="password"  placeholder="Password">
+						<a style="color: #2f889a;text-decoration: none;" style="color: #2f889a;text-decoration: none;" href="#0" class="hide-password">Show</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+
+					<p class="fieldset">
+					<label id="signup_error"></label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding" id="signup_submit" type="button" value="Create account">
+					</p>
+				</form>
+				<script type="text/javascript">
+					$(document).ready(function()
+					{
+						$('#signup_submit').click(function()
+						{
+							if($('#signup_email').val()=="")
+							{
+								$('#signin_email_error').html("Enter Email!").fadeOut( 2000 );
+								$('#signin_email_error').css('color','red');
+								return false;
+							} 
+							else
+							{
+								var signup_email = $('#signup_email').val();
+								
+								
+							}
+							if($('#signup_password').val()=="")
+							{
+								$('#signin_password_error').html("Please Give Comments!").fadeOut( 2000 );
+								$('#signin_password_error').css('color','red');
+								return false;
+							}
+							else
+							{
+								var signup_password = $('#signup_password').val();
+								
+							}
+							var signup_phone = $('#signup_phone').val();
+							var signup_name = $('#signup_name').val();
+							jQuery.post("code.php", {signup_email:signup_email,signup_password: signup_password, signup_phone: signup_phone,signup_name: signup_name },
+							function(data, textStatus)
+							{
+								if(data == 1)
+								{
+									window.location="./index3.php";
+								}
+								else
+								{
+									//window.location="error.php";
+									$('#signup_error').html("this email already exists").show().fadeOut( 5000 );
+									$('#signup_error').css('color','red');
+									
+								}
+							});
+						});
+					});
+					</script>
+
+				<!-- <a style="color: #2f889a;text-decoration: none;" href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+			<div id="cd-reset-password"> <!-- reset password form -->
+				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding has-border" id="reset-email" type="text" placeholder="E-mail">
+						<span class="cd-error-message">Invalid E-mail!</span>
+					</p>
+
+					<p class="fieldset">
+						<input style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" style="font-family: 'PT Sans', sans-serif;font-size: 16px;font-size: 1rem;" class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+			
+			
+			<a style="color: #2f889a;text-decoration: none;" href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> 
+	<!-- cd-user-modal -->
+
+<script src="js/popup.js"></script> <!-- Gem jQuery -->
+<!--popup-->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/cropmybill.js"></script>
+<script>
+require("app/lib/js/snap"); 
+require("app/js/mobile_snapper");
+require("app/js/layout_manager");
+require("app/js/slider");
+
+</script>
+
+
+
+
+</body>
+</html>

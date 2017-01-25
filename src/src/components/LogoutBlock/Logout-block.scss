@@ -1,0 +1,18 @@
+$logout-text-color:#2daedb;
+$logout-icon:#888888;
+
+.logout-span{
+	font-size:16px;
+	color:$logout-text-color;
+	font-family: 'SapientSansRegular';
+}
+.signout-icon{
+	color:$logout-icon;
+	padding: 0 0 0 10px;
+}
+
+@media (max-width:992px){
+	.logout-span{
+		padding-left:15px;
+	}
+}

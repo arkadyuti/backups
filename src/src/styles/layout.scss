@@ -1,0 +1,26 @@
+$light-grey:#dfe4e7;
+
+.project-list-content{
+	background-color:$light-grey;
+	.list-header{
+		min-height: 50px;
+	}
+	.filter-content{
+		min-height: 150px;
+	}
+	.grid-data{
+		min-height: 400px;
+	}
+}
+
+@media (max-width: 768px) {
+	.project-list-content{
+		.list-header{
+			height: 115px;
+		}
+		
+		.grid-data{
+			height: 280px;
+		}
+	}
+}

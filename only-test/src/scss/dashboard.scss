@@ -1,0 +1,41 @@
+.charts-container{
+	width: 90%;
+	margin: 0 auto;
+	background-color: #dfe4e7;
+	.skill-based-chart {
+    padding-left: 0px;
+	}
+	.growth-chart {
+	    
+	}
+	.status-chart {
+	    padding-bottom: 15px;
+	}
+	.chart-name {
+	    text-transform: uppercase;
+		margin: 30px 0 10px;
+	}
+	.chart-wrapper {
+	    background-color: #fefefe;
+	    width: 100%;
+	    min-height: 300px;
+	    padding: 15px;
+	}
+}
+.piecharts-container{
+	width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    padding-top: 38px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 72px;
+}
+.clear-both{
+	clear: both;
+}
+.trends-year{
+	text-align: center;
+	cursor: pointer;
+}

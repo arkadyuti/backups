@@ -1,0 +1,80 @@
+{  
+   "skills":[  
+      {  
+         "label":"framework1",
+         "value":"20"
+      },
+      {  
+         "label":"framework2",
+         "value":"15"
+      },
+      {  
+         "label":"framework3",
+         "value":"10"
+      },
+      {  
+         "label":"framework4",
+         "value":"9"
+      },
+      {  
+         "label":"framework5",
+         "value":"7"
+      },
+      {  
+         "label":"framework6",
+         "value":"12"
+      },
+      {  
+         "label":"framework7",
+         "value":"5"
+      },
+      {  
+         "label":"framework8",
+         "value":"5"
+      },
+      {  
+         "label":"framework9",
+         "value":"4"
+      },
+      {  
+         "label":"framework10",
+         "value":"4"
+      },
+      {  
+         "label":"framework11",
+         "value":"2"
+      }
+   ],
+   "status":{
+   "status": [{
+         "label": "red",
+         "value": "10"
+      }, {
+         "label": "green",
+         "value": "10"
+      }, {
+         "label": "blue",
+         "value": "10"
+      }],
+      "location": [{
+         "label": "BRL",
+         "value": "10"
+      }, {
+         "label": "GGN",
+         "value": "10"
+      }, {
+         "label": "OTHERS",
+         "value": "10"
+      }],
+      "scg": [{
+         "label": "SCG1",
+         "value": "10"
+      }, {
+         "label": "SCG2",
+         "value": "10"
+      }, {
+         "label": "SCG3",
+         "value": "10"
+      }]
+   }
+}

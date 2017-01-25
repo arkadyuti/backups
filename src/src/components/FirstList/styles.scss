@@ -1,0 +1,98 @@
+
+.cp-library-content {
+    padding: 0;
+    .cp-library-list-heading {
+        font-family: 'SapientSansMedium';
+        padding:0 0 5px 0;
+    }
+    .cp-library-list::-webkit-scrollbar {
+    width: 4px;
+    }
+    .cp-library-list::-webkit-scrollbar-track {
+        height: 2px;
+    }
+    .cp-library-list::-webkit-scrollbar-thumb {
+        background-color: #000000;
+    }
+    .cp-library-list {
+            border: 1px solid #DCDCDC;
+            height: 373px;
+            border-width: 11px 1px 1px;
+            overflow: auto;
+            margin: 6px 0 0;
+            width: 73%;
+           
+        .cp-library-sub-heading {
+            padding: 19px 0 10px 17px;
+            font-family: 'SapientSansMedium';
+        }
+        .cp-library {
+            border-bottom: 1px solid #D3D3D3;
+            margin: auto;
+            padding:0 0 10px 0;
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:992px){
+.cp-library-content {
+    padding: 0;
+    .cp-library-list-heading {
+        font-family: 'SapientSansMedium';
+        padding:0 0 5px 0;
+    }
+    .cp-library-list::-webkit-scrollbar {
+    width: 4px;
+    }
+    .cp-library-list::-webkit-scrollbar-track {
+        height: 2px;
+    }
+    .cp-library-list::-webkit-scrollbar-thumb {
+        background-color: #000000;
+    }
+    .cp-library-list {
+            border: 1px solid #DCDCDC;
+            height: 373px;
+            border-width: 11px 1px 1px;
+            overflow: auto;
+            margin: 6px 0 0;
+            width: 73%;
+           
+        .cp-library-sub-heading {
+            padding: 11px 0 0 17px;
+            font-family: 'SapientSansMedium';
+        }
+        .cp-library {
+            border-bottom: 1px solid #D3D3D3;
+            margin: auto;
+            padding:0 0 10px 0;
+        }
+    }
+}
+
+}
+
+@media (max-width:767px){
+    .cp-library-content{
+        width:100%;
+        padding:0 0 20px 0;
+               .cp-library-list {
+                    width:100%;
+                    }
+                    }
+                    }
+
+
+
+
+@media (min-width:2000px) and (max-width:3500px){
+.cp-library-content{
+            .cp-library-list-heading {
+            }
+             cp-library-list-heading-view-mode{
+             }
+                .cp-library-list {
+                 height:400px;
+                }
+                }
+                }

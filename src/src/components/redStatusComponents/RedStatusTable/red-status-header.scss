@@ -1,0 +1,46 @@
+$white:#fff;
+$black:#000;
+$light-grey:#dfe4e7;
+$light-blue:#35ABCC;
+$sky :#bbdae2;
+$dark-blue:#187BD8;
+$green :#3e9535;
+$amber :#f1972e;
+$custom-btn: #2DAEDB;
+$nearly-black:#1C1C1C;
+
+.red-status-header{
+	width:100%;
+	min-height: 60px;
+	.list-heading{
+		color: $nearly-black;
+	    display:inline-block;
+	    font-size: 14px;
+		font-family: "SapientSansMedium";
+	    font-weight: bold;
+	}
+	.sub-header{
+		margin:0px 0px 0px -15px;
+	}
+}
+
+
+.bold-font{
+	font-weight:bold;
+	font-family: 'SapientSansRegular';
+}
+
+
+
+
+@media (max-width: 768px) {
+	.red-status-header{
+		height: 60px;
+		.list-heading{
+			display: block;
+			font-size: 16px;
+    		padding-top: 5px;
+		}
+	}
+	
+}

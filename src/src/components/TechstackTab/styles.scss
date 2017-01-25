@@ -1,0 +1,190 @@
+
+.cp-tab-container{
+.cp-tech-stack-wrapper-view-mode{
+    margin: auto;
+    width:100%;  
+}
+}
+.cp-tab-container{
+ 
+.cp-tech-stack-wrapper {
+
+    margin: auto;
+    width:100%;
+     .cp-button-wrapper {
+        padding: 0;
+        text-align:center;
+        .cp-move-button,.cp-send-button{
+            color: white;
+            font-size:11px;
+            font-weight:bold;
+            font-family:'SapientSansRegular';
+            height: 38px;
+            width:120px;
+            position: relative;  
+            float:none;   
+        }
+        .cp-move-button:focus,.cp-send-button:focus{
+            border:2px solid #fff;
+        }
+
+        .cp-move-button{
+           background-color: #2daedb;
+           margin: 134px auto 0;     
+        }
+        .cp-send-button {
+            margin: 40px 0 0;
+            background-color:#3a3a3a;
+        }
+        .cp-move-button-icon:before,.cp-send-button-icon:before{ 
+            padding:0 8px 0 0;
+            display: inline-block;
+            font-family: "Ionicons";
+            position: absolute;  
+        }
+        .cp-move-button-icon:before{
+            content: "\f125";
+            top: 12px;
+            right: 20px;
+        }
+        .cp-send-button-icon:before{
+            content: "\f124";
+            top: 11px;
+            left: 17px;
+        }
+    }
+}
+}
+
+
+
+@media (min-width:768px) and (max-width:992px){
+.cp-tab-container{
+.cp-tech-stack-wrapper-view-mode{
+    margin: auto;
+    width:100%;  
+}
+}
+.cp-tab-container{
+.cp-tech-stack-wrapper {
+    margin: auto;
+    width:100%;
+     .cp-button-wrapper {
+        padding: 0;
+        text-align:center;
+        .cp-move-button,.cp-send-button{
+            color: white;
+            font-size:11px;
+            font-weight:lighter;
+            font-family:'SapientSansRegular';
+            width: 120px;
+            height: 38px;
+            border: none;
+            position: relative;  
+            float:none;   
+        }
+        .cp-move-button{
+           background-color: #2daedb;
+           margin: 149px auto 0;  
+           padding: 1px 22px 0 0px;   
+        }
+        .cp-send-button {
+            margin: 54px 0 0;
+            padding: 0 0 0 15px;
+            background-color:#3a3a3a;
+        }
+        .cp-move-button-icon:before,.cp-send-button-icon:before{ 
+            padding:0 8px 0 0;
+            display: inline-block;
+            font-family: "Ionicons";
+            position: absolute;  
+        }
+        .cp-move-button-icon:before{
+                content: "\F125";
+                top: 12px;
+                right: 23px;
+                font-weight: bold;
+                font-size: 14px;
+        }
+        .cp-send-button-icon:before{
+            content: "\f124";
+            top: 9px;
+            left: 20px;
+            font-size: 14px;
+            font-weight: bold;
+
+        }
+    }
+}
+}
+}
+
+
+@media (max-width:767px) {
+.cp-tab-container{
+.cp-tech-stack-wrapper-view-mode{
+    margin: auto;
+    width:100%;  
+ }
+ }
+ .cp-tab-container{
+    .cp-tech-stack-wrapper {
+        width: 100%;
+         margin: auto;
+        .cp-button-wrapper {
+            width:100%;
+            margin: 20px 0 20px;
+                 .cp-move-button,.cp-send-button{
+                     width:46%;
+                 }
+            .cp-move-button {    
+               margin: 0;
+               padding-left: 0px;
+                  .cp-move-button-icon:before{
+                        content: "\f123";
+                           content: "\F123";
+                            top: 12px;
+                            right: -6px;
+                            left:-3px;
+                            padding:0 0 0 67px;
+                        
+        }
+            }
+            .cp-send-button {
+                    margin: 0px 0 0 6%;
+                    padding: 0 35px 0 0;
+                        .cp-send-button-icon:before{
+                            content: "\f126";
+                            top: 11px;
+                            right:-25px;
+                            left:40px;
+        }
+            }
+        }
+    }
+    }
+}
+
+
+
+@media (min-width:1800px) and (max-width:3500px){
+.cp-tab-container{
+.cp-tech-stack-wrapper {
+.cp-button-wrapper {
+.cp-move-button,.cp-send-button{
+    width:200px;
+}
+.cp-move-button{
+.cp-move-button-icon:before{ 
+right:51px;
+}
+}
+.cp-send-button{
+    .cp-send-button-icon:before{
+    right:101px;
+    }
+}
+
+}}
+}
+}

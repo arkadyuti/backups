@@ -1,0 +1,159 @@
+$white:#fff;
+$dark-grey:#333;
+$day-border:#dc292f;
+$day-background:#fbe9ea;
+$today-hover:#E0E0E0;
+$today:#ECECEC;
+$day-mute:#999;
+$mute-hover:#eee;
+.calendar{
+    position: absolute;
+    box-shadow: 0px 1px 10px 6px #e4e6e6;
+    font-family: "SapientSansRegular";
+    text-align: center;
+    padding: 10px;
+    font-size: small;
+    z-index: 1;
+    background-color:$white ;
+}
+
+.show{
+      display: block;
+        width: 100%;
+}
+.day{
+    color:$dark-grey ;
+    text-decoration: none;
+    text-align: center;
+        padding: 2px 2px 2px 2px;
+}
+.day:hover{
+    background-color:$mute-hover ;
+    cursor: pointer;
+}
+.day-muted{
+    color:$day-mute ;
+    pointer-events: none;
+}
+.day-selected{
+    background: $day-background;
+    border: 1px solid $day-border;
+}
+.day-selected:hover{
+    background-color: $day-background;
+    cursor: pointer;
+}
+
+.day-today{
+    background-color:$today ;
+}
+.day-today:hover{
+    background-color:$today-hover;
+}
+.selected-date{
+    display: block;
+    text-align: center;
+}
+.date-picker-nav{
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: $dark-grey;
+    padding: 0 0 5px 0;
+    font-size: medium;
+}
+.date-picker-nav:hover{
+    background-color: #eee;
+}
+.date-picker-week {
+    display: flex;
+    justify-content: space-between;
+    padding:0px 20px;
+}
+
+.date-picker-nav-previous{
+    margin: 0 0 0 15px;
+    padding:0 2px;
+}
+.date-picker-nav-next{
+   margin: 0 15px 0 0;
+    padding:0 2px;
+}
+.week-day {
+    color: $day-border;
+    display: inline-block;
+    width: 15%;
+    padding: 2px;
+}
+
+.day-cell {
+    display: inline-block;
+    padding: 2px;
+    width: 15%;
+}
+.input-field{
+    border: none;
+    background:$white;
+    font-family: "SapientSansRegular";
+    font-size: 13px;
+}
+.calendar-field{
+    width: 100%;
+    padding: 10px 0px 10px 5px;
+    position: relative;
+
+
+    .cp-input:focus ~ .cp-floating-label,
+    .cp-input:not(:focus):valid ~ .cp-floating-label{
+        top: 5px;
+        left: 20px;
+        font-size: 11px;
+        opacity: 1;
+        font-family: 'SapientSansRegular';
+       
+    }
+
+    .cp-input {
+    font-size: 15px;
+    height: 100%;
+    width:100%;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-color: transparent;
+}
+    
+    
+
+    .cp-date-label{
+        top: 4px;
+        font-size: 12px;
+    }
+}
+
+.calendar-icon{
+     cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    top: 20px;
+    right: 7px;
+}
+
+
+.hide-calendar{
+    display:none;
+}
+
+.cp-icon-field {
+    height: 70px;
+    width: 32px;
+    top: 0px;
+    position: absolute;
+    right: 0px;
+    outline: none;
+    border-left: 1px solid #ccd0d1;
+}

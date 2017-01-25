@@ -1,0 +1,31 @@
+#wrapper{
+	max-width: 610px;
+  	width: 100%;
+  	margin: 0 auto;
+  	background :lightblue;
+}
+
+.svg-container {
+	    position: relative;
+	    width: 100%;
+	    overflow: hidden;
+	}
+
+
+
+/* .svg-content-responsive {
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+
+.axis text {
+  font: 14px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+}

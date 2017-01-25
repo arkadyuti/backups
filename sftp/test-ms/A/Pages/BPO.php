@@ -1,0 +1,5 @@
+<div style="color:white; margin:30px; text-align:justify; font-size:1.6em; text-shadow: 1px 2px 3px blue;"> <br> &nbsp &nbsp &nbsp 
+High operating costs? Wondering what transformational technologies to invest in to stay ahead of competition? How to optimize collection results? How to manage cash-flow, reduce inventory-carrying costs, and ramp up after-sales service? How to meet new governance, risk and compliance regulations? How to gain visibility across your supply chain? Or move to more complex processes such as actuarial and underwriting analytics support?
+
+If these are your challenges – they are certainly not just about the cost. It’s about optimizing your business processes while simplifying them and addressing operational issues like security, privacy, or governance. A dependable and reliable partner can get you there – a partner who has embraced the industry best-in-class processes required to deliver such secure outsourcing services.
+</div>

@@ -1,0 +1,145 @@
+{
+	"trends": [{
+		 "id":2015,
+			"least_year": 2014,
+			"total": 69,
+			"current": 2015,
+			"yearData": {
+				"Q1": {
+					"RED": 10,
+					"GREEN": 20,
+					"AT RISK": 11
+				},
+				"Q2": {
+					"RED": 15,
+					"GREEN": 42,
+					"AT RISK": 20
+				},
+				"Q3": {
+					"RED": 40,
+					"GREEN": 63,
+					"AT RISK": 30
+				},
+				"Q4": {
+					"RED": 10,
+					"GREEN": 100,
+					"AT RISK": 10
+				}
+			}
+		},
+		 {
+		 	"id":2016,
+			"least_year": 2015,
+			"total": 69,
+			"current": 2016,
+			"yearData": {
+				"Q1": {
+					"RED": 10,
+					"GREEN": 100,
+					"AT RISK": 10
+				},
+				"Q2": {
+					"RED": 80,
+					"GREEN": 63,
+					"AT RISK": 30
+				},
+				"Q3": {
+					"RED": 10,
+					"GREEN": 20,
+					"AT RISK": 11
+				},
+				"Q4": {
+					"RED": 15,
+					"GREEN": 42,
+					"AT RISK": 20
+				}
+			}
+		}
+	],
+	"skills": [{
+		"label": "framework1",
+		"value": "20"
+	}, {
+		"label": "framework2",
+		"value": "15"
+	}, {
+		"label": "framework3",
+		"value": "10"
+	}, {
+		"label": "framework4",
+		"value": "9"
+	}, {
+		"label": "framework5",
+		"value": "7"
+	}, {
+		"label": "framework6",
+		"value": "12"
+	}, {
+		"label": "framework7",
+		"value": "5"
+	}, {
+		"label": "framework8",
+		"value": "5"
+	}, {
+		"label": "framework9",
+		"value": "4"
+	}, {
+		"label": "framework10",
+		"value": "4"
+	}, {
+		"label": "framework11",
+		"value": "2"
+	}],
+   "status":{
+   "status": [{
+         "label": "red",
+         "value": "10"
+      }, {
+         "label": "green",
+         "value": "10"
+      }, {
+         "label": "blue",
+         "value": "10"
+      }],
+      "location": [{
+         "label": "BRL",
+         "value": "10"
+      }, {
+         "label": "GGN",
+         "value": "10"
+      }, {
+         "label": "OTHERS",
+         "value": "10"
+      }],
+      "scg": [{
+         "label": "SCG1",
+         "value": "10"
+      }, {
+         "label": "SCG2",
+         "value": "10"
+      }, {
+         "label": "SCG3",
+         "value": "10"
+      }],
+      "s1cg": [{
+         "label": "SCG1",
+         "value": "10"
+      }, {
+         "label": "SCG2",
+         "value": "10"
+      }, {
+         "label": "SCG3",
+         "value": "10"
+      }],
+      "s1cqg": [{
+         "label": "SCG1",
+         "value": "10"
+      }, {
+         "label": "SCG2",
+         "value": "10"
+      }, {
+         "label": "SCG3",
+         "value": "10"
+      }]
+   }
+}

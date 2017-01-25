@@ -1,0 +1,24 @@
+{
+	"contest" : [
+		{
+			"id" : 1,
+			"categoryName" : "B/C",
+			"contestName" : "ABC"
+		},
+		{
+			"id" : 2,
+			"categoryName" : "M/N",
+			"contestName" : "DEF"
+		},
+		{
+			"id" : 3,
+			"categoryName" : "SC",
+			"contestName" : "GHI"
+		},
+		{
+			"id" : 4,
+			"categoryName" : "WB",
+			"contestName" : "IJK"
+		}
+	]
+}

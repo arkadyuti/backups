@@ -1,0 +1,57 @@
+$grey: #dfe5e6;
+$black: #2a2a2a;
+$white: #fff;
+.showgrid {
+    width: 100%;
+    height: 100%;
+}
+
+.left-container {
+    height: 100%;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    & .show1 {
+        display: block;
+    }
+    }
+
+.right-container {
+    
+    padding: 0 0 0 240px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-gc {
+    background-color: $white;
+    padding: 0;
+    height: 50px;
+}
+
+.content {
+    padding: 0;
+
+}
+
+.sidePanel {
+    width: 100%;
+    height: 782px;
+}
+
+@media (max-width: 992px) {
+
+   .right-container {
+        padding: 0;
+        display:block;
+        
+    }
+    .left-container{
+        display:none;
+        z-index:3;
+    }
+    .show1 {
+        display: block;
+    }
+ 
+}

@@ -1,0 +1,54 @@
+$black:#000;
+$sky :#bbdae2;
+$nearly-black:#1C1C1C;
+
+.project-list-header{
+	.header{
+		width:100%;
+		min-height: 50px;
+		.list-heading{
+			color: $nearly-black;
+		    display:inline-block;
+		    font-size: 14px;
+			font-family: "SapientSansMedium";
+		    font-weight: bold;
+		}
+		.sub-header{
+			margin:0px 0px 0px -15px !important;
+		}
+	}
+}
+
+
+
+.displayed-project{
+	min-height:78px;
+	background-color:$sky;
+	margin:0px !important;
+	padding:28px 0px 0px 0px !important;	
+}
+
+.displayed-number{
+	font-size: 14px;
+	font-family: 'SapientSansLight';
+	color:$black;
+}
+
+
+@media (max-width: 768px) {
+	.project-list-header{
+		.header{
+			height:  105px;
+			.list-heading{
+				display: block;
+				font-size:18px;
+				padding-top: 10px;
+			}
+		}
+	}
+
+	.displayed-project{
+		height: 50px;
+	}
+	
+}

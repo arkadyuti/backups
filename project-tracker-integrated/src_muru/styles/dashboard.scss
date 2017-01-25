@@ -1,0 +1,195 @@
+@import "../fonts/font-face.scss";
+
+.root-container{
+	width: 991px;
+	margin: 0 auto;
+}
+.charts-container{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #dfe4e7;
+	.skill-based-chart {
+		padding-left: 0px;
+	}
+	.growth-chart {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.status-chart {
+		padding-bottom: 15px;
+	}
+	.chart-name {
+		text-transform: uppercase;
+		margin: 30px 0 10px;
+	}
+	.chart-wrapper {
+		background-color: #fefefe;
+		width: 100%;
+		min-height: 330px;
+		padding: 15px;
+	}
+}
+.piecharts-container{
+	width: 100px;
+	height: 100px;
+	background: red;
+	border-radius: 50%;
+	padding-top: 38px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 72px;
+}
+.clear-both{
+	clear: both;
+}
+.tooltip{
+	width: 20;
+	height : 20;
+}
+.tooltip-style{
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-left: 5px solid red;
+	border-bottom: 5px solid transparent;
+	bottom: -5px;
+	left: 15px;
+}
+
+.bar-chart{
+	height: 375px;
+	position:relative;
+	svg{
+		position: absolute;
+		top: 70px;
+	}
+	.legend-wrapper{
+		text-align: right;
+		margin-top: 10px;
+		div{
+			span{
+				padding-right: 10px;
+				padding-left: 2px;
+			}
+			.box{
+				height: 10px;
+				width: 15px;
+				display: inline-block;
+			}
+			
+		}
+	}
+	
+	.upper-display-chart{
+		text-align: center;
+	}
+}
+
+.grp{
+	fill: red;
+}
+
+.year-btn{
+	margin-right:10px;
+	margin-left:10px;
+}
+.disp-none{
+	display:none;
+}
+.year-display{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.legend{
+	list-style:none;
+	
+	
+	div{
+		display: inline-block;
+	}
+
+}
+.error{
+	color: red;
+	opacity: 0.5;
+}
+
+.loader{
+	text-align: center;
+	padding-top: 120px;
+}
+
+.loading{
+	color: grey;
+}
+
+@media (max-width:768px) {
+	.bar-chart{
+		position: relative;
+		svg{
+			position: relative;
+			top:0px;
+		}
+		.legend-wrapper{
+			position: absolute;
+			right: 10px;
+			text-align: left;
+			margin-top: 0px;
+			ul{
+				margin-left: 10px;
+				li{
+					span{
+						padding-left: 5px;
+					}
+					span.box{
+						height: 10px;
+						width: 15px;
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+	
+	.root-container{
+		width: auto;
+		margin: 0 auto;
+	}
+	.charts-container .skill-based-chart{
+		padding-left: 15px;
+	}
+	.status-chart-svg{
+		display: block;
+		margin: 0 auto;
+	}
+	.svg-wrapper{
+		height: 314px;
+		text-align: center;
+		width: 100%;
+	}
+	.quadrant-display-chart{
+		text-align: center;
+	}
+
+	.error{
+		color: red;
+		opacity: 0.5;
+	}
+
+	.loader{
+		text-align: center;
+		padding-top: 120px;
+	}
+
+	.loading{
+		color: grey;
+	}
+
+}
+@media (max-width: 1000px) and (min-width: 768px) { 
+	.root-container{
+		width: auto;
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"status1": [
+		"status": [{
+			"label": "red",
+			"value": "10"
+		}, {
+			"label": "green",
+			"value": "10"
+		}, {
+			"label": "blue",
+			"value": "10"
+		}],
+		"location": [{
+			"label": "BRL",
+			"value": "10"
+		}, {
+			"label": "GGN",
+			"value": "10"
+		}, {
+			"label": "OTHERS",
+			"value": "10"
+		}],
+		"scg": [{
+			"label": "SCG1",
+			"value": "10"
+		}, {
+			"label": "SCG2",
+			"value": "10"
+		}, {
+			"label": "SCG3",
+			"value": "10"
+		}]
+	]
+}

@@ -1,0 +1,72 @@
+
+
+.root-container{
+	width: 991px;
+	margin: 0 auto;
+}
+.charts-container{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #dfe4e7;
+	font-family:'SapientSansRegular';
+	.skill-based-chart {
+		padding-left: 0px;
+	}
+	.growth-chart {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.status-chart {
+		padding-bottom: 15px;
+	}
+	.chart-name {
+		text-transform: uppercase;
+		margin: 20px 0 10px;
+		font-family:'SapientSansBold';
+	}
+	.chart-wrapper {
+		background-color: #fefefe;
+		width: 100%;
+		min-height: 405px;
+		padding: 15px;
+		display: table;
+
+	}
+	.status-wrapper{
+		min-height: 60px;
+		overflow: auto;
+	}
+}
+
+.clear-both{
+	clear: both;
+}
+
+.disp-none{
+	display:none;
+}
+
+@media (max-width:768px) {
+
+	
+	.root-container{
+		width: auto;
+		margin: 0 auto;
+	}
+	.charts-container .skill-based-chart{
+		padding-left: 15px;
+	}
+	.status-chart-svg{
+		display: block;
+		margin: 0 auto;
+	}
+	.svg-wrapper{
+		height: 314px;
+		text-align: center;
+		width: 100%;
+	}
+	.quadrant-display-chart{
+		text-align: center;
+	}
+
+}

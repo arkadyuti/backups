@@ -1,0 +1,29 @@
+{
+  "name": "crop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arkadyuti Sarkar",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "http-proxy": "^1.16.2",
+    "react": "0.14.8",
+    "react-dom": "0.14.8",
+    "react-helmet": "^2.2.0",
+    "react-redux": "^4.0.0",
+    "react-router": "2.0.0",
+    "react-router-redux": "^4.0.0",
+    "redux": "^3.0.4",
+    "redux-async-connect": "^1.0.0-rc2",
+    "redux-form": "^3.0.12",
+    "redux-thunk": "^2.1.0"
+  }
+}

@@ -1,0 +1,227 @@
+<script src="d3.v3.min.js" charset="utf-8"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<style type="text/css">	
+	body{
+		background-color: lightgrey;
+	}
+	div{
+		height: 300px;
+		width: 575px;
+		background-color: silver;
+	}
+	svg{
+		background-color: white;	
+	}
+	.tooltip{
+		background-color: #383838;
+		color: #fafafa;
+		display: inline-block;
+		width: 20px;
+		text-align: center;
+
+	}
+	.tooltip-style{
+	    position: absolute;
+	    width: 0;
+	    height: 0;
+	    border-top: 0px solid transparent;
+	    border-left: 5px solid red;
+	    border-bottom: 5px solid transparent;
+	    bottom: -5px;
+	    left: 15px;
+  	}
+</style>
+<body>
+	<div>
+	</div>
+</body>
+<script>
+var data1 = {
+	"least_year": 2014,
+	"total": 69,
+	"current": 2015,
+	"yearData": {
+		"Q1": {
+			"RED": 2,
+			"GREEN": 18,
+			"AT RISK": 11
+		},
+		"Q2": {
+			"RED": 5,
+			"GREEN": 42,
+			"AT RISK": 20
+		},
+		"Q3": {
+			"RED": 0,
+			"GREEN": 63,
+			"AT RISK": 5
+		},
+		"Q4": {
+			"RED": 10,
+			"GREEN": 67,
+			"AT RISK": 10
+		}
+	}
+};
+	
+		console.log(data1);
+	var qData = [];
+	var newData = [];
+	for(var key in data1.yearData){
+		qData.push(key);
+	}
+
+	for(var key in data1.yearData){
+		for(var key1 in data1.yearData[key])
+		newData.push(data1.yearData[key][key1]);
+	}
+	console.log(newData);
+	console.log(qData);	
+
+	//var qData = ["Q1","Q2","Q3","Q4"];
+	//var newData = [800, 200, 400, 500, 800, 200, 400, 500, 1000, 500, 800, 200];
+	var len = newData.length,
+	divof3 = len/3,
+	barHeight=210,
+	barWidth=800,
+	count = 0,
+	valuePos;
+	
+
+	var xScale = d3.scale.ordinal()
+	.domain(qData)
+	.rangeBands([0,len*20+divof3*15]);
+
+	var yScale = d3.scale.linear()
+	.domain([d3.max(newData),0])
+	.range([0,barHeight]);
+
+	var vAxis = d3.svg.axis()
+					.scale(yScale)
+					.orient("left")
+					.ticks(4); 
+
+	var hAxis = d3.svg.axis()
+					.scale(xScale)
+					.orient("bottom")
+					.ticks(4);
+
+	var tooltip = d3.select("div")
+					.append("span")
+					.attr("class","tooltip")
+					.style("position","absolute");
+
+
+	
+	var chart = d3.select("div")
+	.append("svg")
+	.attr("height", "100%")
+	.attr("width", "100%");
+
+	var chart0 = chart;
+
+	var addAnimation = chart.append("g")
+	.selectAll( "rect" )
+	.data( newData )
+	.enter()
+	.append( "rect");
+
+	var chart1 = addAnimation;
+
+
+	chart1.attr( "x", function(d,i){
+		if(i%3==0){
+			count++;
+			
+		}
+		return i*20 +15*count;
+	})
+	.attr( "width", 15) 
+	.attr( "fill", function(d,i){
+		if(i%3==0){
+			return "#f26945";
+			
+		}
+		else if(i%3==1){
+			return "#1ec4c2";
+			
+		}
+		else{
+			return "#fdd04f";
+			
+		}
+	})
+	.attr( "height", 0 )
+	.attr( "y", 0 )
+	.on('mouseover',function(d,i){
+		valuePos = parseInt(this.getAttribute("x")) + 38;
+		tooltip.html(d)
+				.style("left", valuePos + 'px')
+				.style("top", this.getAttribute("y") + 'px').append("span").attr("class","tooltip-style");
+
+		
+
+		d3.select(this)
+			.transition().duration(800)
+			.style("opacity",0.5);
+	})
+	.on('mouseout',function(d){
+		tooltip.html("");
+
+		d3.select(this)
+			.transition()
+			.style("opacity",1);
+		
+	})
+	.attr("transform","translate(30,10)");
+	
+
+	chart0.selectAll("span")
+	.data(qData)
+	.enter()
+	.append("span")
+	.text(function(d){
+		return d;
+	})
+			.style("left", function(d,i){
+				return 20*i;
+			})
+			.style("top", 180);
+
+
+
+	addAnimation.transition()
+				.delay(function(d,i){
+					return i*100;
+				})
+				.attr("height",function(d){
+					return (d/d3.max(newData)*barHeight);
+				})
+				.attr("y",function(d){
+					return barHeight - (d/d3.max(newData)*barHeight);
+				});
+
+	var vRuler = d3.select("svg")
+	.append("g")
+	.attr("transform","translate(30,10)");
+
+	var hRuler = d3.select("svg")
+	.append("g")
+	.attr("transform","translate(30,220)");
+
+	vAxis(vRuler);
+
+	hAxis(hRuler);
+
+	vRuler.selectAll("path")
+	.style({fill:"none"});
+
+	
+
+	hRuler.selectAll("path")
+	.style({fill:"none"});
+
+	
+
+
+</script>

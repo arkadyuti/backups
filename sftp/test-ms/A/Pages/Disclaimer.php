@@ -1,0 +1,3 @@
+<div style="color:white; margin:30px; text-align:justify; font-size:1.6em; text-shadow: 1px 2px 3px blue;"> <br> &nbsp &nbsp &nbsp 
+Softech is an independent services provider of Remote Tech Support for third party products. We have expertise in products from a wide variety of third party companies (Microsoft, Dell, Compaq, HP, Lenovo, Gateway, Apple, Sony, Toshiba, Acer, Samsung, Canon, Brother, etc). The brand names, trademarks, logos, company names used in the site belong to their respective owners and are for representation purposes only. Also the services are available on the websites of brands owners, 'Softech Tech Support Services' has no affiliation with any third-party companies unless such relationship is expressly specified.
+</div>
